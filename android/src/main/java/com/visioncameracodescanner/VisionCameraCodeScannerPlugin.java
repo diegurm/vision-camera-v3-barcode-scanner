@@ -15,7 +15,6 @@ import android.media.Image;
 
 import com.mrousavy.camera.frameprocessor.Frame;
 import com.mrousavy.camera.frameprocessor.FrameProcessorPlugin;
-import com.mrousavy.camera.parsers.Orientation;
 
 import androidx.annotation.NonNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,9 +27,11 @@ import com.google.mlkit.vision.barcode.BarcodeScanning;
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.common.internal.ImageConvertUtils;
+import com.mrousavy.camera.types.Orientation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
@@ -247,6 +248,6 @@ public class VisionCameraCodeScannerPlugin extends FrameProcessorPlugin {
 	}
 
   VisionCameraCodeScannerPlugin() {
-
+    super(Collections.singletonMap("scanCodes", null));
   }
 }
